@@ -1,0 +1,9 @@
+.DS_Store
+**/.DS_Store
+
+# Raw source material (scans, TIFFs, unprocessed photos) — not part of the
+# published site, kept locally only.
+docs/Marianita Valdinoci/
+docs/pensieri dipinti/
+docs/img mancanti.tif
+docs/home.JPG

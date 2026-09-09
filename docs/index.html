@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marianita Valdinoci — Pittrice e scultrice</title>
+<meta name="description" content="Marianita Valdinoci, pittrice e scultrice milanese. Pensieri dipinti, pensieri plasmati: biografia, antologia critica e galleria delle opere.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span></button>
+  <nav class="main-nav" id="mainNav">
+    <a href="#top" data-nav="home">Home</a>
+    <a href="#bio" data-nav="bio">Biografia</a>
+    <a href="#critica" data-nav="critica">Antologia critica</a>
+    <a href="#dipinti" data-nav="dipinti">Pensieri dipinti</a>
+    <a href="#sculture" data-nav="sculture">Pensieri plasmati</a>
+    <div class="lang-toggle">
+      <button data-lang="it" class="active">IT</button>
+      <span style="color:var(--line)">/</span>
+      <button data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1 data-i18n="hero.name">Marianita Valdinoci</h1>
+        <p class="hero-quote" data-i18n="hero.quote"></p>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/img/site/hero.jpg" alt="Marianita Valdinoci nel suo studio, con una delle sue sculture in terra cruda">
+      </figure>
+    </div>
+  </section>
+
+  <section id="bio">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 data-i18n="bio.title">Biografia</h2>
+      </div>
+      <div class="bio-grid">
+        <div class="bio-text reveal" id="bioText"></div>
+      </div>
+      <div class="exhibitions">
+        <div class="reveal">
+          <h3 data-i18n="bio.personali_title">Mostre personali</h3>
+          <ol id="personaliList"></ol>
+        </div>
+        <div class="reveal">
+          <h3 data-i18n="bio.collettive_title">Mostre collettive</h3>
+          <ol id="collettiveList"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <section id="critica">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Voci sull'opera</span>
+        <h2 data-i18n="critica.title">Antologia critica</h2>
+      </div>
+      <div class="crit-list" id="critList"></div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <section id="dipinti">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2><span data-i18n="gallery.dipinti_title">Pensieri dipinti</span><span class="section-years">1987–2004</span></h2>
+        <p class="gallery-quote" data-i18n="gallery.dipinti_quote"></p>
+      </div>
+      <div class="grid" id="paintingsGrid"></div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <section id="sculture">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2><span data-i18n="gallery.sculture_title">Pensieri plasmati</span><span class="section-years">1950–2017</span></h2>
+        <p class="gallery-quote" data-i18n="gallery.sculture_quote"></p>
+      </div>
+      <div class="grid" id="sculpturesGrid"></div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer>
+  <div class="footer-contact">
+    <span data-i18n="contact.rights">Per qualsiasi informazione sulle opere, scrivere a</span>
+    <a href="mailto:maggiomusic@gmail.com" class="mail-link" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3.5 5.5h17v13h-17z"/><path d="M4 6l8 6.5L20 6"/></svg>
+    </a>
+  </div>
+  <div class="footer-meta">
+    <span>© <span id="year"></span> Marianita Valdinoci</span>
+    <span data-i18n="footer">Tutte le opere riprodotte sono di Marianita Valdinoci.</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Chiudi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-prev" id="lbPrev" aria-label="Precedente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-next" id="lbNext" aria-label="Successivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="lb-inner">
+    <div class="lb-media"><img id="lbImage" src="" alt=""></div>
+    <div class="lb-info">
+      <span class="eyebrow" id="lbEyebrow"></span>
+      <h3 id="lbTitle"></h3>
+      <div class="meta" id="lbMeta"></div>
+      <p class="txt" id="lbText"></p>
+      <div class="lb-series" id="lbSeries"></div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
