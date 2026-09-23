@@ -109,6 +109,10 @@
     });
   }
 
+  function sculptureSrc(s, key){
+    return 'assets/img/sculptures/' + key + '.' + (s.ext || 'png');
+  }
+
   function renderSculptures(dict){
     var grid = document.getElementById('sculpturesGrid');
     grid.innerHTML = SITE_DATA.sculptures.map(function(s, i){
@@ -117,11 +121,11 @@
       return '' +
         '<div class="card" data-type="sculpture" data-index="' + i + '">' +
           '<div class="frame" style="aspect-ratio:' + (s.ratio || 1) + '">' +
-            '<img src="assets/img/sculptures/' + s.key + '.png" alt="' + t.title + '" loading="lazy">' +
+            '<img src="' + sculptureSrc(s, s.series ? s.series[0].key : s.key) + '" alt="' + t.title + '" loading="lazy">' +
           '</div>' +
           '<div class="cap">' +
             (label ? '<div class="tag">' + (state.lang==='it' ? 'Vizi capitali' : 'Deadly sins') + '</div>' : '') +
-            '<div class="t">' + t.title + '</div><div class="y">' + s.year + '</div>' +
+            '<div class="t">' + t.title + '</div><div class="y">' + (t.year || s.year) + '</div>' +
           '</div>' +
         '</div>';
     }).join('');
@@ -219,12 +223,28 @@
       var label = state.lang === 'it' ? s.series_label_it : s.series_label_en;
       lbEyebrow.textContent = dict.gallery.sculture_title;
       lbTitle.textContent = st.title;
-      lbMeta.textContent = [label, s.year].filter(Boolean).join(' · ');
-      lbText.textContent = '';
-      lbImage.src = 'assets/img/sculptures/' + s.key + '.png';
-      lbImage.alt = st.title;
-      sizeLightboxMedia(s.ratio);
-      lbSeries.innerHTML = '';
+      lbMeta.textContent = [label, st.year || s.year].filter(Boolean).join(' · ');
+      lbText.textContent = st.text || '';
+      if (s.series){
+        var spart = s.series[state.seriesIndex];
+        lbImage.src = sculptureSrc(s, spart.key);
+        lbImage.alt = st.title;
+        sizeLightboxMedia(spart.ratio || s.ratio);
+        lbSeries.innerHTML = s.series.map(function(part2, i){
+          return '<button data-i="' + i + '" class="' + (i===state.seriesIndex?'active':'') + '"><img src="' + sculptureSrc(s, part2.key) + '" alt=""></button>';
+        }).join('');
+        lbSeries.querySelectorAll('button').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            state.seriesIndex = parseInt(btn.getAttribute('data-i'), 10);
+            refreshLightboxContent(SITE_DATA.i18n[state.lang]);
+          });
+        });
+      } else {
+        lbImage.src = sculptureSrc(s, s.key);
+        lbImage.alt = st.title;
+        sizeLightboxMedia(s.ratio);
+        lbSeries.innerHTML = '';
+      }
     }
   }
 

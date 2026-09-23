@@ -1108,6 +1108,27 @@ const SITE_DATA = {
       "ratio": 0.6689
     },
     {
+      "key": "teste-cugini",
+      "ext": "jpg",
+      "year": "1958",
+      "it": {
+        "title": "teste dei cugini di Bologna",
+        "year": "circa 1958",
+        "text": "Periodo di Brera."
+      },
+      "en": {
+        "title": "heads of the Bologna cousins",
+        "year": "c. 1958",
+        "text": "Brera period."
+      },
+      "series": [
+        { "key": "teste-cugini-1", "ratio": 0.5625 },
+        { "key": "teste-cugini-2", "ratio": 0.5625 },
+        { "key": "teste-cugini-3", "ratio": 0.5625 }
+      ],
+      "ratio": 0.5625
+    },
+    {
       "key": "portinaia",
       "year": "1975",
       "it": {
