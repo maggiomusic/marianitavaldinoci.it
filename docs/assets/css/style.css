@@ -307,6 +307,12 @@ footer{
 }
 .footer-contact .mail-link:hover{ color: var(--gold); border-color: var(--gold); }
 .footer-contact .mail-link svg{ width:16px; height:16px; }
+.footer-family{
+  font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--ink-dim);
+}
+.footer-family a{ color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.footer-family a:hover{ color: var(--gold); }
 .footer-meta{
   display:flex; justify-content:center; flex-wrap:wrap; gap: .5rem 1.5rem;
   font-size:.76rem; color: var(--ink-faint); letter-spacing:.03em;

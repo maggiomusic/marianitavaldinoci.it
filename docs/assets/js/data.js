@@ -175,6 +175,7 @@ const SITE_DATA = {
       "contact": {
         "rights": "Per qualsiasi informazione sulle opere, scrivere a"
       },
+      "family": { "pre": "Il figlio", "post": "conserva molte delle sue opere." },
       "footer": "Tutte le opere riprodotte sono di Marianita Valdinoci."
     },
     "en": {
@@ -352,6 +353,7 @@ const SITE_DATA = {
       "contact": {
         "rights": "For any information about the works, write to"
       },
+      "family": { "pre": "Her son", "post": "keeps many of her works." },
       "footer": "All works reproduced are by Marianita Valdinoci."
     }
   },
